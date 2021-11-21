@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,11 @@ public class TasbeehAdaptor extends RecyclerView.Adapter<TasbeehAdaptor.TasbeehV
             ni.putExtra(Keys.COUNT, t.count);
             context.startActivity(ni);
         });
+
+        holder.btnDelete.setOnClickListener(v -> {
+            dataManagement.deleteTasbeeh(t.id);
+            notifyDataSetChanged();
+        });
     }
 
     @Override
@@ -48,11 +54,13 @@ public class TasbeehAdaptor extends RecyclerView.Adapter<TasbeehAdaptor.TasbeehV
 
     class TasbeehViewHolder extends RecyclerView.ViewHolder {
         TextView textTitle, textCount;
+        ImageButton btnDelete;
 
         public TasbeehViewHolder(View itemView) {
             super(itemView);
             this.textTitle = itemView.findViewById(R.id.text_tasbeeh_item_title);
             this.textCount = itemView.findViewById(R.id.text_tasbeeh_item_count);
+            this.btnDelete = itemView.findViewById(R.id.btn_delete_tasbeeh_item);
         }
 
         public void setTextTitle(String title) {

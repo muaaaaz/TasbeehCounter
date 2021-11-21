@@ -39,7 +39,7 @@ public class DataManagement {
     public void addNewTasbeeh(Tasbeeh tasbeeh) {
         tasbeehList.add(tasbeeh);
         try (FileWriter fileWriter = new FileWriter(dataFile, true)) {
-            tasbeeh.id = tasbeehList.size() + 1;
+            tasbeeh.id = tasbeehList.size() + 1; // TODO: 21/11/2021 Add id after getting id of last element
             fileWriter.write(tasbeeh.getCSVLine());
         } catch (IOException ioException) {
             Log.e(TAG, "DataManagement: " + ioException.getMessage(), null);
@@ -55,6 +55,23 @@ public class DataManagement {
                 // updating in file
                 fileWriter.write(tasbeehList.get(i).getCSVLine());
             }
+        } catch (IOException ioException) {
+            Log.e(TAG, "DataManagement: " + ioException.getMessage(), null);
+        }
+    }
+
+    public void deleteTasbeeh(int tasbeehID) {
+        int indexToDelete = -1;
+        try (FileWriter fileWriter = new FileWriter(dataFile)) {
+            for (int i = 0; i < tasbeehList.size(); i++) {
+                if (tasbeehList.get(i).id == tasbeehID) {
+                    indexToDelete = i;
+                    continue;
+                }
+                fileWriter.write(tasbeehList.get(i).getCSVLine());
+            }
+            if (indexToDelete >= 0 && indexToDelete < tasbeehList.size())
+                tasbeehList.remove(indexToDelete);
         } catch (IOException ioException) {
             Log.e(TAG, "DataManagement: " + ioException.getMessage(), null);
         }
