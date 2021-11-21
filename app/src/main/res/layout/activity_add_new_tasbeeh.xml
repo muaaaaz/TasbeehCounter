@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewTasbeehActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_add_tasbeeh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/CustomHeadingOneStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_main_heading"
+            android:paddingHorizontal="@dimen/_50dp"
+            android:paddingVertical="@dimen/_12dp"
+            android:text="Add new Tasbeeh" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:background="@drawable/style_rounded"
+            android:padding="@dimen/_7dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_title_addTasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:background="@drawable/style_rounded"
+            android:padding="@dimen/_7dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_count_addTasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Count (Optional)"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/btn_cancel_addTasbeeh"
+            style="@style/CustomInActiveButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_7dp"
+            android:layout_weight="0.5"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/btn_add_addTasbeeh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_7dp"
+            android:layout_weight="0.5"
+            android:text="Add" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

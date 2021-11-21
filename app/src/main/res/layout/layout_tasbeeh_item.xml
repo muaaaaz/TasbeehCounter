@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_7dp"
+    android:background="@drawable/style_rounded_border"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_50dp"
+    android:paddingVertical="@dimen/_10dp">
+
+    <TextView
+        android:id="@+id/text_tasbeeh_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Title"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/_20sp" />
+
+    <TextView
+        android:id="@+id/text_tasbeeh_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="0"
+        android:textColor="@color/purple_200"
+        android:textSize="@dimen/_15sp" />
+
+</LinearLayout>
