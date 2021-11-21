@@ -37,9 +37,14 @@ public class DataManagement {
     }
 
     public void addNewTasbeeh(Tasbeeh tasbeeh) {
+        if (tasbeehList.size() > 0) {
+            int tempId = tasbeehList.get(tasbeehList.size() - 1).id;
+            tasbeeh.id = tempId + 1;
+        } else
+            tasbeeh.id = 1;
         tasbeehList.add(tasbeeh);
         try (FileWriter fileWriter = new FileWriter(dataFile, true)) {
-            tasbeeh.id = tasbeehList.size() + 1; // TODO: 21/11/2021 Add id after getting id of last element
+
             fileWriter.write(tasbeeh.getCSVLine());
         } catch (IOException ioException) {
             Log.e(TAG, "DataManagement: " + ioException.getMessage(), null);
