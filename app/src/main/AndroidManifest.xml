@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tasbeeh">
+        <activity android:name=".EditTasbeehActivity"></activity>
         <activity android:name=".AddNewTasbeehActivity" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".CounterActivity" />

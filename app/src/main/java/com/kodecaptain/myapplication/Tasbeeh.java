@@ -6,6 +6,7 @@ public class Tasbeeh {
     public int count;
 
     public Tasbeeh() {
+        id = -1;
         title = null;
         count = -1;
     }

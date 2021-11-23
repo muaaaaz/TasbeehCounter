@@ -45,6 +45,14 @@ public class TasbeehAdaptor extends RecyclerView.Adapter<TasbeehAdaptor.TasbeehV
             dataManagement.deleteTasbeeh(t.id);
             notifyDataSetChanged();
         });
+
+        holder.btnEdit.setOnClickListener(v -> {
+            Intent ni = new Intent(context, EditTasbeehActivity.class);
+            ni.putExtra(Keys.ID, t.id);
+            ni.putExtra(Keys.TITLE, t.title);
+            ni.putExtra(Keys.COUNT, t.count);
+            context.startActivity(ni);
+        });
     }
 
     @Override
@@ -54,13 +62,14 @@ public class TasbeehAdaptor extends RecyclerView.Adapter<TasbeehAdaptor.TasbeehV
 
     class TasbeehViewHolder extends RecyclerView.ViewHolder {
         TextView textTitle, textCount;
-        ImageButton btnDelete;
+        ImageButton btnDelete, btnEdit;
 
         public TasbeehViewHolder(View itemView) {
             super(itemView);
             this.textTitle = itemView.findViewById(R.id.text_tasbeeh_item_title);
             this.textCount = itemView.findViewById(R.id.text_tasbeeh_item_count);
             this.btnDelete = itemView.findViewById(R.id.btn_delete_tasbeeh_item);
+            this.btnEdit = itemView.findViewById(R.id.btn_edit_tasbeeh_item);
         }
 
         public void setTextTitle(String title) {
