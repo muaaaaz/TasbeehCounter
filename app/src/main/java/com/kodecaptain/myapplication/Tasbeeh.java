@@ -15,6 +15,12 @@ public class Tasbeeh {
         this.count = count;
     }
 
+    public Tasbeeh(int id, String title, int count) {
+        this.id = id;
+        this.title = title;
+        this.count = count;
+    }
+
     public Tasbeeh(String tasbeehCSV) {
         String[] values = tasbeehCSV.split(",");
         id = Integer.parseInt(values[0]);

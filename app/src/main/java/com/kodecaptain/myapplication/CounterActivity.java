@@ -15,7 +15,8 @@ public class CounterActivity extends AppCompatActivity {
     private static final String TAG = "CounterActivity";
     TextView titleText, counterText;
     Button resetBtn, backBtn;
-    int count, currentID;
+    int currCount, currentID;
+    String currTitle;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,19 +34,20 @@ public class CounterActivity extends AppCompatActivity {
             finish();
         }
         currentID = in.getIntExtra(Keys.ID, -1);
-        titleText.setText(in.getStringExtra(Keys.TITLE));
-        count = in.getIntExtra(Keys.COUNT, -1);
-        counterText.setText(String.valueOf(count));
+        currTitle = in.getStringExtra(Keys.TITLE);
+        titleText.setText(currTitle);
+        currCount = in.getIntExtra(Keys.COUNT, -1);
+        counterText.setText(String.valueOf(currCount));
 
 
         counterText.setOnClickListener(v -> {
-            ++count;
-            counterText.setText(String.valueOf(count));
+            ++currCount;
+            counterText.setText(String.valueOf(currCount));
         });
 
         resetBtn.setOnClickListener(v -> {
-            count = 0;
-            counterText.setText(String.valueOf(count));
+            currCount = 0;
+            counterText.setText(String.valueOf(currCount));
         });
 
         backBtn.setOnClickListener(v -> {
@@ -59,7 +61,7 @@ public class CounterActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt(Keys.ID, currentID);
         outState.putString(Keys.TITLE, titleText.getText().toString());
-        outState.putInt(Keys.COUNT, count);
+        outState.putInt(Keys.COUNT, currCount);
     }
 
     @Override
@@ -71,8 +73,8 @@ public class CounterActivity extends AppCompatActivity {
         String savedTitle = savedInstanceState.getString(Keys.TITLE);
         titleText.setText(savedTitle);
 
-        count = savedInstanceState.getInt(Keys.COUNT);
-        counterText.setText(String.valueOf(count));
+        currCount = savedInstanceState.getInt(Keys.COUNT);
+        counterText.setText(String.valueOf(currCount));
     }
 
     @Override
@@ -83,6 +85,6 @@ public class CounterActivity extends AppCompatActivity {
 
     protected void saveCurrentDataToFile() {
         DataManagement dataManagement = new DataManagement(getApplicationContext());
-        dataManagement.updateTasbeeh(currentID, count);
+        dataManagement.updateTasbeeh(new Tasbeeh(currentID, currTitle, currCount));
     }
 }

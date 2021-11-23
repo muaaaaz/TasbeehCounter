@@ -51,12 +51,14 @@ public class DataManagement {
         }
     }
 
-    public void updateTasbeeh(int tasbeehID, int newCount) {
+    public void updateTasbeeh(Tasbeeh updatedTasbeeh) {
         try (FileWriter fileWriter = new FileWriter(dataFile)) {
             for (int i = 0; i < tasbeehList.size(); i++) {
                 // updating in list
-                if (tasbeehList.get(i).id == tasbeehID)
-                    tasbeehList.get(i).count = newCount;
+                if (tasbeehList.get(i).id == updatedTasbeeh.id) {
+                    tasbeehList.get(i).title = updatedTasbeeh.title;
+                    tasbeehList.get(i).count = updatedTasbeeh.count;
+                }
                 // updating in file
                 fileWriter.write(tasbeehList.get(i).getCSVLine());
             }
