@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tasbeeh</string>
+    <string name="add_new_tasbeeh">نئی تسبیح</string>
+    <string name="title">تسبیح کا نام</string>
+    <string name="count_optional">گنتی (اختیاری)</string>
+    <string name="cancel">منسوخ</string>
+    <string name="add">شامل کریں</string>
+    <string name="reset">سب خالی کریں</string>
+    <string name="back">واپس</string>
+    <string name="edit_tasbeeh">تسبیح میں ترمیم</string>
+    <string name="count">گنتی</string>
+    <string name="update">ترمیم کریں</string>
+    <string name="add_button">شامل کرنے کا بٹن</string>
+</resources>

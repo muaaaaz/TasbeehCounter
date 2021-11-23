@@ -39,7 +39,7 @@
         android:layout_marginBottom="@dimen/_20dp"
         android:background="@drawable/btn_oval"
         android:backgroundTint="@color/purple_500"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/add_button"
         android:padding="@dimen/_7dp"
         android:src="@drawable/ic_add" />
 </RelativeLayout>
