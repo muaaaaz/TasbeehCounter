@@ -11,15 +11,15 @@
         android:theme="@style/Theme.Tasbeeh">
         <activity android:name=".EditTasbeehActivity"></activity>
         <activity android:name=".AddNewTasbeehActivity" />
-        <activity android:name=".SplashActivity" />
-        <activity android:name=".CounterActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CounterActivity" />
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>
